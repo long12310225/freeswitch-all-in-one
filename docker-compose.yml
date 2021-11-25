@@ -1,0 +1,19 @@
+version: "3"
+services:
+    freeswitch:
+        image: long12310225/freeswitch-all-in-one
+        cap_add:
+            - ALL
+        privileged: true
+        dns:
+            - 8.8.8.8
+        network_mode: "host"
+        labels:
+            description: "FreeSwitch Server"
+        working_dir: /usr/local/freeswitch
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - ./odbc/odbc.ini:/etc/odbc.ini:rw
+            - ./odbc/odbcinst.ini:/etc/odbcinst.ini:rw
+            - ./freeswitch/conf/vars.xml:/usr/local/freeswitch/etc/freeswitch/vars.xml:rw
+        restart: always

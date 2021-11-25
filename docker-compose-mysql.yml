@@ -1,0 +1,29 @@
+version: "3"
+services:
+    mysql:
+        image: mysql:5.7
+        ports:
+            - "23306:3306"
+        cap_add:
+            - ALL
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "1g"
+        dns:
+            - 8.8.8.8
+        network_mode: "bridge"
+        labels:
+            description: "Mysql Server"
+        volumes:
+            - /app/mysql/conf:/etc/mysql/conf.d
+            - /app/mysql/data:/var/lib/mysql
+            - /etc/localtime:/etc/localtime:ro
+        environment:
+            - MYSQL_ROOT_PASSWORD=kunlun2020
+        ulimits:
+            nproc: 65535
+            nofile:
+                soft: 20000
+                hard: 20000
+        restart: always

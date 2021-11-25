@@ -1,0 +1,52 @@
+[mysqld]
+#是否启用bin log
+skip-log-bin
+skip-name-resolve
+#lower_case_table_names = 1
+# 设置3306端口
+port=3306
+# 设置mysql的安装目录
+#basedir=D:\\webserver\\mysql\\mysql-8.0.12-winx64
+# 切记此处一定要用双斜杠\\，单斜杠我这里会出错
+# 设置mysql数据库的数据的存放目录
+datadir=/var/lib/mysql
+# 允许最大连接数
+max_connections=20000
+# 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统
+max_connect_errors=10
+# 服务端使用的字符集默认为UTF8
+character-set-server=utf8mb4
+
+# 默认使用“mysql_native_password”插件认证
+default_authentication_plugin=mysql_native_password
+
+#InnoDB#
+# 创建新表时将使用的默认存储引擎
+default-storage-engine=INNODB
+innodb_buffer_pool_size=2G
+#innodb_additional_pool_size=20M
+innodb_log_file_size=256M
+innodb_log_buffer_size=12M
+innodb_flush_log_at_trx_commit=2
+#innodb_flush_method
+#thread_cache=8
+#innodb_autoextend_increment=128M
+
+#这里确认是否起用压缩存储功能
+innodb_file_per_table=1
+#innodb_file_format=barracuda #mysql 8 不支持该功能
+#决定压缩程度的参数，如果你设置比较大，那么压缩比较多，耗费的CPU资源也较多；
+#相反，如果设置较小的值，那么CPU占用少。默认值6，可以设置0-9#
+innodb_compression_level=6
+#指定在每个压缩页面可以作为空闲空间的最大比例，
+#该参数仅仅应用在设置了innodb_compression_failure_threshold_pct不为零情况下，并且压缩失败率通过了中断点。
+#默认值50，可以设置范围是0到75
+innodb_compression_pad_pct_max=50
+
+[mysql]
+# 设置mysql客户端默认字符集
+default-character-set=utf8
+[client]
+# 设置mysql客户端连接服务端时默认使用的端口
+port=3306
+default-character-set=utf8
