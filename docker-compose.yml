@@ -1,7 +1,7 @@
 version: "3"
 services:
     freeswitch:
-        image: long12310225/freeswitch-all-in-one
+        image: long12310225/freeswitch-all-in-one:v1
         cap_add:
             - ALL
         privileged: true
@@ -15,5 +15,5 @@ services:
             - /etc/localtime:/etc/localtime:ro
             - ./odbc/odbc.ini:/etc/odbc.ini:rw
             - ./odbc/odbcinst.ini:/etc/odbcinst.ini:rw
-            - ./freeswitch/conf/vars.xml:/usr/local/freeswitch/etc/freeswitch/vars.xml:rw
+            - ./freeswitch/conf:/usr/local/freeswitch/etc/freeswitch:rw
         restart: always

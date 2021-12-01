@@ -12,7 +12,7 @@
 
        WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
   -->
-  <X-PRE-PROCESS cmd="set" data="default_password=1234"/>
+  <X-PRE-PROCESS cmd="set" data="default_password=h12345"/>
   <!-- Did you change it yet? -->
   <!--
       The following variables are set dynamically - calculated if possible by freeswitch - and
@@ -49,7 +49,9 @@
   -->
 
 
-  <X-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/en/us/callie"/>
+  <!--<X-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/en/us/callie"/>-->
+  <X-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/zh/cn/sue"/>
+
   <!--<Z-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/en/us/allison"/> -->
 
   <!--
@@ -420,14 +422,14 @@
 
   <!-- Internal SIP Profile -->
   <X-PRE-PROCESS cmd="set" data="internal_auth_calls=true"/>
-  <X-PRE-PROCESS cmd="set" data="internal_sip_port=5060"/>
-  <X-PRE-PROCESS cmd="set" data="internal_tls_port=5061"/>
+  <X-PRE-PROCESS cmd="set" data="internal_sip_port=25060"/>
+  <X-PRE-PROCESS cmd="set" data="internal_tls_port=25061"/>
   <X-PRE-PROCESS cmd="set" data="internal_ssl_enable=false"/>
 
   <!-- External SIP Profile -->
   <X-PRE-PROCESS cmd="set" data="external_auth_calls=false"/>
-  <X-PRE-PROCESS cmd="set" data="external_sip_port=5080"/>
-  <X-PRE-PROCESS cmd="set" data="external_tls_port=5081"/>
+  <X-PRE-PROCESS cmd="set" data="external_sip_port=25080"/>
+  <X-PRE-PROCESS cmd="set" data="external_tls_port=25081"/>
   <X-PRE-PROCESS cmd="set" data="external_ssl_enable=false"/>
 
   <!-- Video Settings -->
