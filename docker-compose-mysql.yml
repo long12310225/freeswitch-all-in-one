@@ -16,8 +16,8 @@ services:
         labels:
             description: "Mysql Server"
         volumes:
-            - /app/mysql/conf:/etc/mysql/conf.d
-            - /app/mysql/data:/var/lib/mysql
+            - ./mysql/conf:/etc/mysql/conf.d
+            - ./mysql/data:/var/lib/mysql
             - /etc/localtime:/etc/localtime:ro
         environment:
             - MYSQL_ROOT_PASSWORD=kunlun2020

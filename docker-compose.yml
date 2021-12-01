@@ -16,4 +16,5 @@ services:
             - ./odbc/odbc.ini:/etc/odbc.ini:rw
             - ./odbc/odbcinst.ini:/etc/odbcinst.ini:rw
             - ./freeswitch/conf:/usr/local/freeswitch/etc/freeswitch:rw
+            - ./freeswitch/recordings/archive:/usr/local/freeswitch/recordings/archive:rw
         restart: always

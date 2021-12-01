@@ -94,3 +94,12 @@ CREATE TABLE `freeswitch`.`cdr_table_ab`  (
   `hangup_cause` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`uuid`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+
+CREATE TABLE `freeswitch`.`users`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+  `user` varchar(256) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `password` varchar(256) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT '用户密码',
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `user_UNIQUE`(`user`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci COMMENT = '用户信息表' ROW_FORMAT = Dynamic;
