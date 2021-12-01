@@ -272,12 +272,12 @@
     -->
     <extension name="Local_Extension">
       <condition field="destination_number" expression="^(.*)$">
-<action application="set" data="RECORD_TITLE=Recording ${destination_number} ${caller_id_number} ${strftime(%Y-%m-%d %H:%M)}"/>  
-<action application="set" data="RECORD_COPYRIGHT=(c) 2011"/>  
+<action application="set" data="RECORD_TITLE=Recording ${destination_number} ${caller_id_number} ${strftime(%Y-%m-%d %H:%M)}"/>
+<action application="set" data="RECORD_COPYRIGHT=(c) 2011"/>
 <action application="set" data="RECORD_SOFTWARE=FreeSWITCH"/>
-<action application="set" data="RECORD_ARTIST=FreeSWITCH"/> 
-<action application="set" data="RECORD_COMMENT=FreeSWITCH"/> 
-<action application="set" data="RECORD_DATE=${strftime(%Y-%m-%d %H:%M)}"/> 
+<action application="set" data="RECORD_ARTIST=FreeSWITCH"/>
+<action application="set" data="RECORD_COMMENT=FreeSWITCH"/>
+<action application="set" data="RECORD_DATE=${strftime(%Y-%m-%d %H:%M)}"/>
 <action application="set" data="RECORD_STEREO=true"/>
 <action application="record_session" data="$${base_dir}/recordings/archive/${strftime(%Y-%m-%d-%H-%M-%S)}_${destination_number}_${caller_id_number}.wav"/>
 	<action application="export" data="dialed_extension=$1"/>
@@ -371,8 +371,7 @@
     -->
     <extension name="nb_conferences">
       <condition field="destination_number" expression="^(30\d{2})$">
-	<action application="answer"/>
-	<action application="conference" data="$1-${domain_name}@default"/>
+	<action application="lua" data="meeting.lua"/>
       </condition>
     </extension>
 
