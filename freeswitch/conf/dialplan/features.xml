@@ -36,7 +36,7 @@
     </extension>
 
     <extension name="please_hold">
-      <condition field="destination_number" expression="^(.*)$">
+      <condition field="destination_number" expression="^(10[01][0-9])$">
 	<action application="set" data="transfer_ringback=$${hold_music}"/>
 	<action application="answer"/>
 	<action application="sleep" data="1500"/>

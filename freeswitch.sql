@@ -11,7 +11,7 @@
  Target Server Version : 50736
  File Encoding         : 65001
 
- Date: 01/12/2021 17:48:24
+ Date: 02/12/2021 13:56:34
 */
 
 SET NAMES utf8mb4;
@@ -200,6 +200,7 @@ CREATE TABLE `conference_number`  (
   `phone_callee_9` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `phone_callee_10` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `timestamp` datetime NULL DEFAULT NULL,
+  `meet_over` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 

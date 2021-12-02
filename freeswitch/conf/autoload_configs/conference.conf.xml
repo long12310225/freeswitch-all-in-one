@@ -108,11 +108,9 @@
       <!-- enable comfort noise generation -->
       <param name="comfort-noise" value="true"/>
       <!-- Uncomment auto-record to toggle recording every conference call. -->
-      <!-- Another valid value is   shout://user:pass@server.com/live.mp3   -->
-      <!--
+      <!-- Another valid value is   shout://user:pass@server.com/live.mp3   --> 
+      <param name="min-required-recording-participants" value="2"/>
       <param name="auto-record" value="$${recordings_dir}/${conference_name}_${strftime(%Y-%m-%d-%H-%M-%S)}.wav"/>
-      -->
-
       <!-- IVR digit machine timeouts -->
       <!-- How much to wait between DTMF digits to match caller-controls -->
       <!-- <param name="ivr-dtmf-timeout" value="500"/> -->

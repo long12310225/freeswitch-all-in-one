@@ -271,13 +271,13 @@
 	 bridge (hangup_after_bridge=true)
     -->
     <extension name="Local_Extension">
-      <condition field="destination_number" expression="^(.*)$">
-<action application="set" data="RECORD_TITLE=Recording ${destination_number} ${caller_id_number} ${strftime(%Y-%m-%d %H:%M)}"/>
-<action application="set" data="RECORD_COPYRIGHT=(c) 2011"/>
+      <condition field="destination_number" expression="^(10[01][0-9])$">
+<action application="set" data="RECORD_TITLE=Recording ${destination_number} ${caller_id_number} ${strftime(%Y-%m-%d %H:%M)}"/>  
+<action application="set" data="RECORD_COPYRIGHT=(c) 2011"/>  
 <action application="set" data="RECORD_SOFTWARE=FreeSWITCH"/>
-<action application="set" data="RECORD_ARTIST=FreeSWITCH"/>
-<action application="set" data="RECORD_COMMENT=FreeSWITCH"/>
-<action application="set" data="RECORD_DATE=${strftime(%Y-%m-%d %H:%M)}"/>
+<action application="set" data="RECORD_ARTIST=FreeSWITCH"/> 
+<action application="set" data="RECORD_COMMENT=FreeSWITCH"/> 
+<action application="set" data="RECORD_DATE=${strftime(%Y-%m-%d %H:%M)}"/> 
 <action application="set" data="RECORD_STEREO=true"/>
 <action application="record_session" data="$${base_dir}/recordings/archive/${strftime(%Y-%m-%d-%H-%M-%S)}_${destination_number}_${caller_id_number}.wav"/>
 	<action application="export" data="dialed_extension=$1"/>
@@ -372,6 +372,8 @@
     <extension name="nb_conferences">
       <condition field="destination_number" expression="^(30\d{2})$">
 	<action application="lua" data="meeting.lua"/>
+	<!--<action application="answer"/>-->
+	<!--<action application="conference" data="$1-${domain_name}@default"/>-->
       </condition>
     </extension>
 

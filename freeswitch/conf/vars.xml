@@ -51,7 +51,7 @@
 
   <!--<X-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/en/us/callie"/>-->
   <X-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/zh/cn/sue"/>
-
+     
   <!--<Z-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/en/us/allison"/> -->
 
   <!--
@@ -62,7 +62,7 @@
       information on this topic.
   -->
   <X-PRE-PROCESS cmd="set" data="json_db_handle=odbc://freeswitch:root:kunlun2020"/>
-  <X-PRE-PROCESS cmd="set" data="domain=192.168.4.177"/>
+  <X-PRE-PROCESS cmd="set" data="domain=192.168.4.225"/>
   <X-PRE-PROCESS cmd="set" data="domain_name=$${domain}"/>
   <X-PRE-PROCESS cmd="set" data="hold_music=local_stream://moh"/>
   <X-PRE-PROCESS cmd="set" data="use_profile=external"/>
@@ -301,7 +301,7 @@
        If unspecified, the bind_server_ip value is used.
        Used by: sofia.conf.xml dingaling.conf.xml
   -->
-  <X-PRE-PROCESS cmd="stun-set" data="external_rtp_ip=192.168.4.177"/>
+  <X-PRE-PROCESS cmd="stun-set" data="external_rtp_ip=192.168.4.225"/>
 
   <!-- external_sip_ip
       Used as the public IP address for SDP.
@@ -314,7 +314,7 @@
        If unspecified, the bind_server_ip value is used.
        Used by: sofia.conf.xml dingaling.conf.xml
   -->
-  <X-PRE-PROCESS cmd="stun-set" data="external_sip_ip=192.168.4.177"/>
+  <X-PRE-PROCESS cmd="stun-set" data="external_sip_ip=192.168.4.225"/>
 
   <!-- unroll-loops
        Used to turn on sip loopback unrolling.
