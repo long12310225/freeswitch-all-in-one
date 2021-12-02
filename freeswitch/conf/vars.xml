@@ -51,7 +51,7 @@
 
   <!--<X-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/en/us/callie"/>-->
   <X-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/zh/cn/sue"/>
-     
+
   <!--<Z-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/en/us/allison"/> -->
 
   <!--
@@ -259,8 +259,8 @@
        127 - BV32
 
   -->
-  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=PCMU,PCMA,H264,VP8"/>
-  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=PCMU,PCMA,H264,VP8"/>
+  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=PCMU,PCMA,H264"/>
+  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=PCMU,PCMA,H264"/>
 
   <!--
       xmpp_client_profile and xmpp_server_profile
