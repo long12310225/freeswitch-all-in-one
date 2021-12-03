@@ -43,6 +43,7 @@ docker pull long12310225/freeswitch-all-in-one:v1
 + 支持录音录像
 + 整合防火墙策略
 + 支持黑名单
++ 支持多人会议
 
 ## 已改进
 + 画面秒出
